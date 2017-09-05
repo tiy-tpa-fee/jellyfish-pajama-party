@@ -12,7 +12,7 @@ class App extends Component {
           <h1>Jellyfish Pajama Party!</h1>
           <Switch>
             <Route exact path="/" component={Start} />
-            <Route path="/game" component={Game} />
+            <Route path="/game/:id" component={Game} />
           </Switch>
         </div>
       </Router>

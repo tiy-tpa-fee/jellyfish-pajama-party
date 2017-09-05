@@ -3,8 +3,7 @@ import React, { Component } from "react"
 class Game extends Component {
   state = {
     id: '',
-    board: [
-    ],
+    board: [],
     state: '',
     mines: '',
     difficulty: ''
@@ -12,7 +11,8 @@ class Game extends Component {
 
 componentDidMount() {
   let url = 'http://minesweeper-api.herokuapp.com/games/'
-  fetch(url + 33).then(res => res.json()).then(data => this.setState(data))
+  let id = this.props.match.params.id
+  fetch(url + id).then(res => res.json()).then(data => this.setState(data))
 }
 
   render() {
