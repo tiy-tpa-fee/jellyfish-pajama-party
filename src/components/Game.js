@@ -15,15 +15,35 @@ componentDidMount() {
   fetch(url + id).then(res => res.json()).then(data => this.setState(data))
 }
 
+ clicked = (i, k) => {
+   fetch(`http://minesweeper-api.herokuapp.com/games/${this.state.id}/check?row=${i}&col=${k}` , {
+     method: "POST"
+   })
+     .then(res => res.json())
+     .then(data => this.setState(data))
+ }
+
+ leFlagged = (i, k, e) => {
+   e.preventDefault()
+   fetch(`http://minesweeper-api.herokuapp.com/games/${this.state.id}/flag?row=${i}&col=${k}` , {
+     method: "POST"
+   })
+     .then(res => res.json())
+     .then(data => this.setState(data))
+ }
+
   render() {
     const rows = this.state.board.map((row, i) => {
+
       return (
         <tr key={i}>
           {row.map((col, k) => {
             switch (col) {
               case " ":
                 return (
-                  <td key={k} className="unrevealed">
+                  <td
+                    onContextMenu={(e) => this.leFlagged(i, k, e)}
+                     onClick={() => this.clicked(i, k)} key={k} className="unrevealed">
                     {col}
                   </td>
                 )
