@@ -44,7 +44,7 @@ body {
 .Game table td {
   height: 24px;
   width: 24px;
-  border: thick solid #fff;
+  border: thick solid #ccc;
   text-align: center;
   line-height: 24px;
   font-size: 0.5em;

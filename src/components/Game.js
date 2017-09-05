@@ -2,60 +2,58 @@ import React, { Component } from "react"
 
 class Game extends Component {
   state = {
-    id: 240,
+    id: '',
     board: [
-      ["_", "_", "_", "_", "_", 1, " ", "*"],
-      ["_", "_", "_", "_", 1, 2, "*", " "],
-      ["_", "_", "_", "_", 1, "*", " ", " "],
-      ["_", "_", "_", "_", 1, 1, " ", " "],
-      [1, 1, 1, "_", "_", 1, " ", " "],
-      [" ", "*", 1, "_", "_", 2, "*", "*"],
-      [" ", " ", 1, 1, 1, 3, "*", "*"],
-      ["*", " ", " ", " ", "*", " ", " ", " "]
     ],
-    state: "lost",
-    mines: 10,
-    difficulty: 0
+    state: '',
+    mines: '',
+    difficulty: ''
   }
+
+componentDidMount() {
+  let url = 'http://minesweeper-api.herokuapp.com/games/'
+  fetch(url + 33).then(res => res.json()).then(data => this.setState(data))
+}
+
   render() {
-    const rows = this.state.board.map(row => {
+    const rows = this.state.board.map((row, i) => {
       return (
-        <tr>
-          {row.map(col => {
+        <tr key={i}>
+          {row.map((col, k) => {
             switch (col) {
               case " ":
                 return (
-                  <td className="unrevealed">
+                  <td key={k} className="unrevealed">
                     {col}
                   </td>
                 )
               case "_":
                 return (
-                  <td className="revealed">
+                  <td key={k} className="revealed">
                     {col}
                   </td>
                 )
               case "*":
                 return (
-                  <td className="bomb">
+                  <td key={k} className="bomb">
                     {col}
                   </td>
                 )
               case "F":
                 return (
-                  <td className="flagged">
+                  <td key={k} className="flagged">
                     {col}
                   </td>
                 )
               case "@":
                 return (
-                  <td className="flaggedBomb">
+                  <td key={k} className="flaggedBomb">
                     {col}
                   </td>
                 )
               default:
                 return (
-                  <td className={`number-${col}`}>
+                  <td key={k} className={`number-${col}`}>
                     {col}
                   </td>
                 )
