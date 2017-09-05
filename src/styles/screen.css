@@ -50,6 +50,24 @@ body {
   font-size: 0.5em;
   color: transparent;
   text-shadow: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Game table td.flagged {
+  background-color: #fff;
+  background-image: url('../images/flagged.png');
+}
+
+.Game table td.bomb {
+  background-color: #b01515;
+  background-image: url('../images/bomb.png');
+}
+
+.Game table td.flaggedBomb {
+  background-color: #a7d5e8;
+  background-image: url('../images/flaggedBomb.png');
 }
 
 .Game table td.unrevealed {
