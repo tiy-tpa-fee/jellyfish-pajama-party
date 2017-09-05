@@ -80,15 +80,18 @@ body {
 
 .Game table td.number-1 {
   color: #516ce0;
+  background-color: #a7d5e8;
 }
 
 .Game table td.number-2 {
   color: #157724;
+  background-color: #a7d5e8;
 }
 
 .Game table td.number-3,
 .Game table td.number-4 {
   color: #c7320a;
+  background-color: #a7d5e8;
 }
 
 .Game table td.number-5,
@@ -96,4 +99,5 @@ body {
 .Game table td.number-7,
 .Game table td.number-8 {
   color: #8b550f;
+  background-color: #a7d5e8;
 }
