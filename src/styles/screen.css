@@ -12,9 +12,8 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   font-size: 24px;
-  background-color: #63b1d2;
+  background-color: #222;
   color: #ffffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -27,6 +26,7 @@ body {
 .App h1 {
   text-align: center;
   margin: 1em;
+  font-family: 'Indie Flower';
 }
 
 .Start,
@@ -36,6 +36,12 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+.Game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .Game table {
   border-collapse: collapse;
@@ -44,7 +50,7 @@ body {
 .Game table td {
   height: 24px;
   width: 24px;
-  border: thick solid #ccc;
+  border: thick solid #496bc2;
   text-align: center;
   line-height: 24px;
   font-size: 0.5em;
